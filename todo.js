@@ -1,6 +1,14 @@
 const inputBox = document.querySelector("#inputbox");
 const listContainer = document.querySelector("#list-container");
 const addTask = document.querySelector(".add-task");
+const toggleBtn = document.querySelector("#theme-toggler");
+const body = document.querySelector("body");
+const todoBox = document.querySelector(".to-do");
+
+toggleBtn.addEventListener('click', () =>{
+    body.classList.toggle('dark-mode');
+    console.log("is this button working?");
+});
 
 addTask.addEventListener('click', (e) => {
     if(inputBox.value === ''){
@@ -19,7 +27,6 @@ addTask.addEventListener('click', (e) => {
     inputBox.value = "";
     saveData();
 });
-
 
 listContainer.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){

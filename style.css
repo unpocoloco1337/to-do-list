@@ -10,25 +10,7 @@ body{
 
 /* Darkmode css */
 
-body .dark-mode {
-    background-color: #121212;
-}
 
-.to-do .dark-mode {
-    background-color: #cecece;
-}
-
-.add-task .dark-mode {
-    background: #121212;
-}
-
-ul li span .dark-mode {
-    color: black;
-}
-
-ul li.checked .dark-mode {
-    color: black;
-}
 
 /* Original css  */
 
@@ -131,4 +113,26 @@ ul li span{
 
 ul li span:hover{
     background: #edeef0;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212;
+}
+
+.dark-mode .to-do {
+    background-color: #cecece;
+}
+
+.dark-mode .add-task {
+    background: #121212;
+    color: #fff;
+}
+
+.dark-mode ul li span {
+    color: black;
+}
+
+.dark-mode ul li.checked {
+    color: black;
 }
