@@ -3,11 +3,16 @@ const listContainer = document.querySelector("#list-container");
 const addTask = document.querySelector(".add-task");
 const toggleBtn = document.querySelector("#theme-toggler");
 const body = document.querySelector("body");
-const todoBox = document.querySelector(".to-do");
 
 toggleBtn.addEventListener('click', () =>{
     body.classList.toggle('dark-mode');
     console.log("is this button working?");
+    
+    if (body.classList.contains('dark-mode')) {
+        toggleBtn.innerText = "😎";
+    } else {
+        toggleBtn.innerText = "🌚";
+    }
 });
 
 addTask.addEventListener('click', (e) => {

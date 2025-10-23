@@ -8,10 +8,6 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-/* Darkmode css */
-
-
-
 /* Original css  */
 
 .to-do{
@@ -135,4 +131,8 @@ body.dark-mode {
 
 .dark-mode ul li.checked {
     color: black;
+}
+
+.dark-mode .theme-toggler-button {
+    background-color: #121212;
 }
