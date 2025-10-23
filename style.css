@@ -42,13 +42,23 @@ input{
     padding: 10px;
 }
 
-button{
+.add-task {
     border: none;
     outline: none;
     padding: 16px 50px;
     background: rgb(192, 98, 113);
     color: #fff;
     font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+.theme-toggler-button {
+    border: none;
+    outline: none;
+    background: pink;
+    color: #fff;
+    font-size: 2.5rem;
     cursor: pointer;
     border-radius: 40px;
 }
