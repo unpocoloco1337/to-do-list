@@ -8,6 +8,30 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+/* Darkmode css */
+
+body .dark-mode {
+    background-color: #121212;
+}
+
+.to-do .dark-mode {
+    background-color: #cecece;
+}
+
+.add-task .dark-mode {
+    background: #121212;
+}
+
+ul li span .dark-mode {
+    color: black;
+}
+
+ul li.checked .dark-mode {
+    color: black;
+}
+
+/* Original css  */
+
 .to-do{
     width: 100%;
     width: 550px;
