@@ -1,8 +1,13 @@
-const inputBox = document.querySelector("#inputbox");
-const listContainer = document.querySelector("#list-container");
-const addTask = document.querySelector(".add-task");
-const toggleBtn = document.querySelector("#theme-toggler");
-const body = document.querySelector("body");
+const inputBox = document.querySelector("#inputbox"); // input field for tasks
+const listContainer = document.querySelector("#list-container"); // UL where added tasks are being shown
+const addTask = document.querySelector(".add-task"); // button to add the task
+const toggleBtn = document.querySelector("#theme-toggler"); // button to switch theme 
+const body = document.querySelector("body"); // to be used for theme switching
+const allTasks = [
+    {
+        
+    }
+]; // array-list for tasks to be sorted
 
 toggleBtn.addEventListener('click', () =>{
     body.classList.toggle('dark-mode');
@@ -18,6 +23,7 @@ toggleBtn.addEventListener('click', () =>{
 addTask.addEventListener('click', (e) => {
     if(inputBox.value === ''){
         alert("can't add an empty task");
+        return;
     }
 
     else{
