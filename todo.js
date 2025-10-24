@@ -1,14 +1,17 @@
 const inputBox = document.querySelector("#inputbox"); // input field for tasks
 const listContainer = document.querySelector("#list-container"); // UL where added tasks are being shown
+const completedList = document.querySelector("#completed-tasks"); // UL for completed tasks
 const addTask = document.querySelector(".add-task"); // button to add the task
 const toggleBtn = document.querySelector("#theme-toggler"); // button to switch theme 
 const body = document.querySelector("body"); // to be used for theme switching
 const allTasks = [
     {
-        
+        title: "Making a list",
+        completed: false       
     }
 ]; // array-list for tasks to be sorted
 
+// a button that toggles between themes 
 toggleBtn.addEventListener('click', () =>{
     body.classList.toggle('dark-mode');
     console.log("is this button working?");
@@ -20,6 +23,7 @@ toggleBtn.addEventListener('click', () =>{
     }
 });
 
+// button to add tasks
 addTask.addEventListener('click', (e) => {
     if(inputBox.value === ''){
         alert("can't add an empty task");
@@ -39,6 +43,7 @@ addTask.addEventListener('click', (e) => {
     saveData();
 });
 
+// clicking the task and either complete or delete
 listContainer.addEventListener("click", function(e){
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked");
@@ -50,10 +55,12 @@ listContainer.addEventListener("click", function(e){
     }
 }, false);
 
+// function to store tasks in browser
 function saveData(){
     localStorage.setItem("data", listContainer.innerHTML);
 }
 
+// function to show the stored tasks
 function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
 }
