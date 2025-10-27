@@ -25,17 +25,18 @@ toggleBtn.addEventListener('click', () =>{
 
 // button to add tasks
 addTask.addEventListener('click', (e) => {
-    if(inputBox.value === ''){
+    const text = inputBox.value.trim();
+    if(text === ''){
         alert("can't add an empty task");
         return;
     }
 
     else{
     let li = document.createElement("li");
-    li.innerHTML = inputBox.value;
+    li.textContent = inputBox.value;
     listContainer.appendChild(li);
     let span = document.createElement("span");
-    span.innerHTML = "\u00d7";
+    span.textContent = "\u00d7";
     li.appendChild(span);
     }
 
@@ -58,11 +59,13 @@ listContainer.addEventListener("click", function(e){
 // function to store tasks in browser
 function saveData(){
     localStorage.setItem("data", listContainer.innerHTML);
+    localStorage.setItem("completed", completedList.innerHTML);
 }
 
 // function to show the stored tasks
 function showTask(){
-    listContainer.innerHTML = localStorage.getItem("data");
+    listContainer.innerHTML = localStorage.getItem("data") || '';
+    listContainer.innerHTML = localStorage.getItem("completed") || '';
 }
 
 showTask();
