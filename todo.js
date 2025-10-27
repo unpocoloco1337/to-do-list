@@ -25,13 +25,12 @@ toggleBtn.addEventListener('click', () =>{
 
 // button to add tasks
 addTask.addEventListener('click', (e) => {
-    const text = inputBox.value.trim();
-    if(text === ''){
+    const newTasktitle = inputBox.value;
+    
+    if(newTasktitle === ''){
         alert("can't add an empty task");
         return;
-    }
-
-    else{
+    } else{
     let li = document.createElement("li");
     li.textContent = inputBox.value;
     listContainer.appendChild(li);
@@ -39,6 +38,13 @@ addTask.addEventListener('click', (e) => {
     span.textContent = "\u00d7";
     li.appendChild(span);
     }
+
+    const newTask = {
+        title: newTasktitle,
+        completed: false,
+    }
+
+    allTasks.push(newTask);
 
     inputBox.value = "";
     saveData();
